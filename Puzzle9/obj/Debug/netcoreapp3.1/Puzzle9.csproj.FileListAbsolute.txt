@@ -1,0 +1,13 @@
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle9\bin\Debug\netcoreapp3.1\Puzzle9.exe
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle9\bin\Debug\netcoreapp3.1\Puzzle9.deps.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle9\bin\Debug\netcoreapp3.1\Puzzle9.runtimeconfig.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle9\bin\Debug\netcoreapp3.1\Puzzle9.runtimeconfig.dev.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle9\bin\Debug\netcoreapp3.1\Puzzle9.dll
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle9\bin\Debug\netcoreapp3.1\Puzzle9.pdb
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle9\obj\Debug\netcoreapp3.1\Puzzle9.csprojAssemblyReference.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle9\obj\Debug\netcoreapp3.1\Puzzle9.AssemblyInfoInputs.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle9\obj\Debug\netcoreapp3.1\Puzzle9.AssemblyInfo.cs
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle9\obj\Debug\netcoreapp3.1\Puzzle9.csproj.CoreCompileInputs.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle9\obj\Debug\netcoreapp3.1\Puzzle9.dll
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle9\obj\Debug\netcoreapp3.1\Puzzle9.pdb
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle9\obj\Debug\netcoreapp3.1\Puzzle9.genruntimeconfig.cache

@@ -1,0 +1,26 @@
+C:\Users\iopya\source\repos\Puzzle10\bin\Debug\netcoreapp3.1\Puzzle10.exe
+C:\Users\iopya\source\repos\Puzzle10\bin\Debug\netcoreapp3.1\Puzzle10.deps.json
+C:\Users\iopya\source\repos\Puzzle10\bin\Debug\netcoreapp3.1\Puzzle10.runtimeconfig.json
+C:\Users\iopya\source\repos\Puzzle10\bin\Debug\netcoreapp3.1\Puzzle10.runtimeconfig.dev.json
+C:\Users\iopya\source\repos\Puzzle10\bin\Debug\netcoreapp3.1\Puzzle10.dll
+C:\Users\iopya\source\repos\Puzzle10\bin\Debug\netcoreapp3.1\Puzzle10.pdb
+C:\Users\iopya\source\repos\Puzzle10\obj\Debug\netcoreapp3.1\Puzzle10.AssemblyInfoInputs.cache
+C:\Users\iopya\source\repos\Puzzle10\obj\Debug\netcoreapp3.1\Puzzle10.AssemblyInfo.cs
+C:\Users\iopya\source\repos\Puzzle10\obj\Debug\netcoreapp3.1\Puzzle10.csproj.CoreCompileInputs.cache
+C:\Users\iopya\source\repos\Puzzle10\obj\Debug\netcoreapp3.1\Puzzle10.dll
+C:\Users\iopya\source\repos\Puzzle10\obj\Debug\netcoreapp3.1\Puzzle10.pdb
+C:\Users\iopya\source\repos\Puzzle10\obj\Debug\netcoreapp3.1\Puzzle10.genruntimeconfig.cache
+C:\Users\iopya\source\repos\Puzzle10\obj\Debug\netcoreapp3.1\Puzzle10.csprojAssemblyReference.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle10\bin\Debug\netcoreapp3.1\Puzzle10.exe
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle10\bin\Debug\netcoreapp3.1\Puzzle10.deps.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle10\bin\Debug\netcoreapp3.1\Puzzle10.runtimeconfig.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle10\bin\Debug\netcoreapp3.1\Puzzle10.runtimeconfig.dev.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle10\bin\Debug\netcoreapp3.1\Puzzle10.dll
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle10\bin\Debug\netcoreapp3.1\Puzzle10.pdb
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle10\obj\Debug\netcoreapp3.1\Puzzle10.csprojAssemblyReference.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle10\obj\Debug\netcoreapp3.1\Puzzle10.AssemblyInfoInputs.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle10\obj\Debug\netcoreapp3.1\Puzzle10.AssemblyInfo.cs
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle10\obj\Debug\netcoreapp3.1\Puzzle10.csproj.CoreCompileInputs.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle10\obj\Debug\netcoreapp3.1\Puzzle10.dll
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle10\obj\Debug\netcoreapp3.1\Puzzle10.pdb
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle10\obj\Debug\netcoreapp3.1\Puzzle10.genruntimeconfig.cache

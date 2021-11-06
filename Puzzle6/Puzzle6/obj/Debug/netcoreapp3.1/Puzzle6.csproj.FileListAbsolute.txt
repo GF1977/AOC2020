@@ -1,0 +1,13 @@
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle6\Puzzle6\obj\Debug\netcoreapp3.1\Puzzle6.csprojAssemblyReference.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle6\Puzzle6\obj\Debug\netcoreapp3.1\Puzzle6.AssemblyInfoInputs.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle6\Puzzle6\obj\Debug\netcoreapp3.1\Puzzle6.AssemblyInfo.cs
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle6\Puzzle6\obj\Debug\netcoreapp3.1\Puzzle6.csproj.CoreCompileInputs.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle6\Puzzle6\bin\Debug\netcoreapp3.1\Puzzle6.exe
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle6\Puzzle6\bin\Debug\netcoreapp3.1\Puzzle6.deps.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle6\Puzzle6\bin\Debug\netcoreapp3.1\Puzzle6.runtimeconfig.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle6\Puzzle6\bin\Debug\netcoreapp3.1\Puzzle6.runtimeconfig.dev.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle6\Puzzle6\bin\Debug\netcoreapp3.1\Puzzle6.dll
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle6\Puzzle6\bin\Debug\netcoreapp3.1\Puzzle6.pdb
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle6\Puzzle6\obj\Debug\netcoreapp3.1\Puzzle6.dll
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle6\Puzzle6\obj\Debug\netcoreapp3.1\Puzzle6.pdb
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle6\Puzzle6\obj\Debug\netcoreapp3.1\Puzzle6.genruntimeconfig.cache

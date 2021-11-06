@@ -1,0 +1,13 @@
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle11\bin\Debug\netcoreapp3.1\Puzzle11.exe
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle11\bin\Debug\netcoreapp3.1\Puzzle11.deps.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle11\bin\Debug\netcoreapp3.1\Puzzle11.runtimeconfig.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle11\bin\Debug\netcoreapp3.1\Puzzle11.runtimeconfig.dev.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle11\bin\Debug\netcoreapp3.1\Puzzle11.dll
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle11\bin\Debug\netcoreapp3.1\Puzzle11.pdb
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle11\obj\Debug\netcoreapp3.1\Puzzle11.AssemblyInfoInputs.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle11\obj\Debug\netcoreapp3.1\Puzzle11.AssemblyInfo.cs
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle11\obj\Debug\netcoreapp3.1\Puzzle11.csproj.CoreCompileInputs.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle11\obj\Debug\netcoreapp3.1\Puzzle11.dll
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle11\obj\Debug\netcoreapp3.1\Puzzle11.pdb
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle11\obj\Debug\netcoreapp3.1\Puzzle11.genruntimeconfig.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle11\obj\Debug\netcoreapp3.1\Puzzle11.csprojAssemblyReference.cache

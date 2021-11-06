@@ -1,0 +1,13 @@
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle4\Puzzle4\bin\Debug\netcoreapp3.1\Puzzle4.exe
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle4\Puzzle4\bin\Debug\netcoreapp3.1\Puzzle4.deps.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle4\Puzzle4\bin\Debug\netcoreapp3.1\Puzzle4.runtimeconfig.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle4\Puzzle4\bin\Debug\netcoreapp3.1\Puzzle4.runtimeconfig.dev.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle4\Puzzle4\bin\Debug\netcoreapp3.1\Puzzle4.dll
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle4\Puzzle4\bin\Debug\netcoreapp3.1\Puzzle4.pdb
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle4\Puzzle4\obj\Debug\netcoreapp3.1\Puzzle4.csprojAssemblyReference.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle4\Puzzle4\obj\Debug\netcoreapp3.1\Puzzle4.AssemblyInfoInputs.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle4\Puzzle4\obj\Debug\netcoreapp3.1\Puzzle4.AssemblyInfo.cs
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle4\Puzzle4\obj\Debug\netcoreapp3.1\Puzzle4.csproj.CoreCompileInputs.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle4\Puzzle4\obj\Debug\netcoreapp3.1\Puzzle4.dll
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle4\Puzzle4\obj\Debug\netcoreapp3.1\Puzzle4.pdb
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle4\Puzzle4\obj\Debug\netcoreapp3.1\Puzzle4.genruntimeconfig.cache

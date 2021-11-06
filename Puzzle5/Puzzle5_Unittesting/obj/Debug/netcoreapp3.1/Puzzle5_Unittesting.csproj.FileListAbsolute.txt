@@ -1,0 +1,4 @@
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle5\Puzzle5_Unittesting\obj\Debug\netcoreapp3.1\Puzzle5_Unittesting.csprojAssemblyReference.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle5\Puzzle5_Unittesting\obj\Debug\netcoreapp3.1\Puzzle5_Unittesting.AssemblyInfoInputs.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle5\Puzzle5_Unittesting\obj\Debug\netcoreapp3.1\Puzzle5_Unittesting.AssemblyInfo.cs
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle5\Puzzle5_Unittesting\obj\Debug\netcoreapp3.1\Puzzle5_Unittesting.csproj.CoreCompileInputs.cache

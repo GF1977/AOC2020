@@ -1,0 +1,13 @@
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle13\bin\Debug\netcoreapp3.1\Puzzle13.exe
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle13\bin\Debug\netcoreapp3.1\Puzzle13.deps.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle13\bin\Debug\netcoreapp3.1\Puzzle13.runtimeconfig.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle13\bin\Debug\netcoreapp3.1\Puzzle13.runtimeconfig.dev.json
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle13\bin\Debug\netcoreapp3.1\Puzzle13.dll
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle13\bin\Debug\netcoreapp3.1\Puzzle13.pdb
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle13\obj\Debug\netcoreapp3.1\Puzzle13.AssemblyInfoInputs.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle13\obj\Debug\netcoreapp3.1\Puzzle13.AssemblyInfo.cs
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle13\obj\Debug\netcoreapp3.1\Puzzle13.csproj.CoreCompileInputs.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle13\obj\Debug\netcoreapp3.1\Puzzle13.dll
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle13\obj\Debug\netcoreapp3.1\Puzzle13.pdb
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle13\obj\Debug\netcoreapp3.1\Puzzle13.genruntimeconfig.cache
+C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle13\obj\Debug\netcoreapp3.1\Puzzle13.csprojAssemblyReference.cache
