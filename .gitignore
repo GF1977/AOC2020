@@ -1,5 +1,5 @@
 # Visual Studio cache/options directory
-**/.vs/
+.vs/*/*/*
 
 # Rider cache/options directory
 .idea/**
@@ -11,4 +11,7 @@ C-Sharp.sln.DotSettings.user
 bin/*/*/*
 obj/*/*/*
 TestResults/*/*/*
+DesignTimeBuild/*/*/*
+
+
 
