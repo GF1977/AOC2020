@@ -13,5 +13,6 @@ obj/*/*/*
 TestResults/*/*/*
 DesignTimeBuild/*/*/*
 
-
+Debug/**
+Release/**
 
