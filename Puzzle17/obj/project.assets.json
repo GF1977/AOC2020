@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GIT\\GF1977\\.NET Core\\AoC 2020\\Puzzle17\\Puzzle17.csproj",
+      "projectUniqueName": "C:\\Users\\iopya\\Source\\Repos\\AOC2020\\Puzzle17\\Puzzle17.csproj",
       "projectName": "Puzzle17",
-      "projectPath": "C:\\GIT\\GF1977\\.NET Core\\AoC 2020\\Puzzle17\\Puzzle17.csproj",
+      "projectPath": "C:\\Users\\iopya\\Source\\Repos\\AOC2020\\Puzzle17\\Puzzle17.csproj",
       "packagesPath": "C:\\Users\\iopya\\.nuget\\packages\\",
-      "outputPath": "C:\\GIT\\GF1977\\.NET Core\\AoC 2020\\Puzzle17\\obj\\",
+      "outputPath": "C:\\Users\\iopya\\Source\\Repos\\AOC2020\\Puzzle17\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\iopya\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

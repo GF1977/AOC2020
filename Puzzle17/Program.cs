@@ -7,193 +7,114 @@ namespace Puzzle17
 {
     class Program
     {
-        public const int nArraySize = 500;
-        public const int nTerra0 = nArraySize / 2;
-
-        // Terra size (5x5)
-        public static int nSize = 21;
-        public static int nCenter = (nSize - 1) / 2;
-
-        public static Level[] AllTerras = new Level[nArraySize];
-        public static Level[] AllTerrasNew = new Level[nArraySize];
-
-        public class Level
-        {
-            public char[,] nSlice;
-            public Level()
-            {
-                nSlice = new char[nSize, nSize];
-                this.EmptyTerra();
-            }
-
-            public void CopyTerra(Level TerraNew)
-            {
-                for (int r = 0; r < nSize; r++)
-                    for (int c = 0; c < nSize; c++)
-                        this.nSlice[r, c] = TerraNew.nSlice[r, c];
-            }
-
-
-            public void EmptyTerra()
-            {
-                for (int r = 0; r < nSize; r++)
-                    for (int c = 0; c < nSize; c++)
-                        this.nSlice[r, c] = '.';
-
-            }
-        }
-
+        const int TERRA_SIZE = 26;
+        const int TERRA_SHIFT = 12;
+        
+        static bool[,,] terra = new bool[TERRA_SIZE, TERRA_SIZE, TERRA_SIZE];
+        static bool[,,] future_terra = new bool[TERRA_SIZE, TERRA_SIZE, TERRA_SIZE];
 
         static void Main(string[] args)
         {
-            bool bStop = false;
-            Level TerraVanilla = new Level();
 
-            StreamReader file = new StreamReader(@".\data.txt");
+
+            //StreamReader file = new StreamReader(@"C:\Users\iopya\Source\Repos\AOC2020\Puzzle17\data_1.txt");
+            StreamReader file = new StreamReader(@"C:\Users\iopya\Source\Repos\AOC2020\Puzzle17\data_test.txt");
             string line = file.ReadLine();
-            int nOffset = (nSize - line.Length) / 2;
 
-
-            int nRowNumber = nOffset;
+            int x = TERRA_SHIFT;
+            int y = TERRA_SHIFT;
+            int z = TERRA_SHIFT;
             while (line != null)
             {
-                int nColNumber = nOffset;
+                x = TERRA_SHIFT;
                 foreach (char c in line)
                 {
-                    TerraVanilla.nSlice[nRowNumber, nColNumber] = c;
-                    nColNumber++;
+                    bool state = false;
+                    if (c == '#')
+                        state = true;
+
+                    terra[x, y, z] = state;
+                    x++;
                 }
-                nRowNumber++;
+                y++;
                 line = file.ReadLine();
             }
 
-            for (int i = 0; i < nArraySize; i++)
+            int activeCells;
+            for (int i = 0; i <= 6; i++)
             {
-                AllTerras[i] = new Level();
-                AllTerrasNew[i] = new Level();
+                activeCells = GetActiveCells();
+                Console.WriteLine("Active cells = {0}", activeCells);
+                SetFutureState();
+                CopyTerra();
             }
 
 
-            AllTerras[nTerra0].CopyTerra(TerraVanilla);
+        }
 
-            //the main cycle - works till the goal is achieved
+        private static void CopyTerra()
+        {
+            for (int z = 0; z < TERRA_SIZE; z++)
+                for (int y = 0; y < TERRA_SIZE; y++)
+                    for (int x = 0; x < TERRA_SIZE; x++)
+                    {
+                        terra[x, y, z] = future_terra[x, y, z];
+                        future_terra[x, y, z] = false;
+                    }
+        }
 
-            int nDeltaMax = 1;
-            int z = 0;
+        static int GetActiveCells()
+        {
+            int res = 0;
+            for (int z = 0; z < TERRA_SIZE; z++)
+                for (int y = 0; y < TERRA_SIZE; y++)
+                    for (int x = 0; x < TERRA_SIZE; x++)
+                        if (terra[x, y, z]== true)
+                            res++;
 
-            AllTerras[nTerra0].nSlice[nCenter, nCenter] = '.';
+              return res;
+        }
 
+        static int GetActiveNeighbours(int x, int y, int z)
+        {
+            int res = 0;
+            for (int d_z = -1; d_z <= 1 ; d_z++)
+                for (int d_y = -1; d_y <= 1; d_y++)
+                    for (int d_x = -1; d_x <= 1; d_x++)
+                        if (terra[x+d_x, y+d_y,z + d_z] == true && !(d_z == 0 && d_y ==0 && d_x ==0))
+                            res++;
 
-            while (!bStop)
-            {
-                int nTerraID = nTerra0;
-                ShowTerra(nTerraID);
-                Console.ReadKey();
+            return res;
+        }
 
-
-                // Part two
-                if (z - 1 == 200)
-                {
-                    Console.WriteLine("Part TWO: {0}", GetBugsCount());
-                    bStop = true;
-                }
-                // Part two end
-
-
-                for (int nDelta = -z; nDelta < nDeltaMax - z; nDelta++)  // trick here is to get consequence -1,0,1    -2,-1,0,1,2   -3,-2,-1,0,1,2,3  etc
-                    for (int r = 0; r < nSize; r++)
-                        for (int c = 0; c < nSize; c++)
+        static void SetFutureState()
+        {
+            for (int z = 1; z < TERRA_SIZE-1; z++)
+                for (int y = 1; y < TERRA_SIZE-1; y++)
+                    for (int x = 1; x < TERRA_SIZE-1; x++)
+                    {
+                        int activeNeighbours = GetActiveNeighbours(x, y, z);
+                        // If a cube is active and exactly 2 or 3 of its neighbors are also active, the cube remains active.Otherwise, the cube becomes inactive.
+                        if (terra[x, y, z] == true)
                         {
-                            int nNeighbors = CheckNeighbors(r, c, nTerraID + nDelta);
-
-                            AllTerrasNew[nTerraID + nDelta].nSlice[r, c] = AllTerras[nTerraID + nDelta].nSlice[r, c];
-
-                            if (AllTerras[nTerraID + nDelta].nSlice[r, c] == '#')
-                            {
-                                if ((nNeighbors == 2 || nNeighbors == 3))
-                                    AllTerrasNew[nTerraID + nDelta].nSlice[r, c] = '#';
-                                else
-                                    AllTerrasNew[nTerraID + nDelta].nSlice[r, c] = '.';
-                            }
+                            if (activeNeighbours == 2 || activeNeighbours == 3)
+                                future_terra[x, y, z] = true;
                             else
-                            {
-
-                                if (nNeighbors == 3 )
-                                    AllTerrasNew[nTerraID + nDelta].nSlice[r, c] = '#';
-                                else
-                                    AllTerrasNew[nTerraID + nDelta].nSlice[r, c] = '.';
-                            }
-
+                                future_terra[x, y, z] = false;
+                        }
+                        // If a cube is inactive but exactly 3 of its neighbors are active, the cube becomes active. Otherwise, the cube remains inactive.
+                        if (terra[x, y, z] == false)
+                        {
+                            if (activeNeighbours == 3)
+                                future_terra[x, y, z] = true;
+                            else
+                                future_terra[x, y, z] = false;
                         }
 
-                if (true)
-                {
-                    z++;
-                    nDeltaMax += 2;
-                }
 
-                for (int m = -z; m < z; m++)
-                    AllTerras[nTerraID + m].CopyTerra(AllTerrasNew[nTerraID + m]);
-
-
-            }
-            //Console.WriteLine("Press any key");
-            //Console.ReadKey();
+                    }
+                       
         }
-
-        private static int GetBugsCount()
-        {
-            int nResult = 0;
-            for (int m = 0; m < nArraySize; m++)
-                for (int r = 0; r < nSize; r++)
-                    for (int c = 0; c < nSize; c++)
-                        if (AllTerras[m].nSlice[r, c] == '#')
-                            nResult++;
-
-
-            return nResult;
-        }
-
-        private static int CheckNeighbors(int r, int c, int nTerraID)
-        {
-            int bResult = 0;
-            int nTerraUpOrDown = 0; // neutral
-
-            for(int nSlice = -1; nSlice <= 1; nSlice ++)
-                for (int x = r - 1; x <= r + 1; x++) 
-                    for (int y = c - 1; y <= c + 1; y++) 
-                        if(IsValidCoordinate(x,y) && (nTerraID + nSlice) < nArraySize && (nTerraID + nSlice) >= 0)
-                            if (AllTerras[nTerraID + nSlice].nSlice[x, y] == '#')
-                                bResult++;
-
-            return bResult;
-        }
-
-
-        private static bool IsValidCoordinate(int x, int y)
-        {
-            if (x >= 0 && x < nSize && y >= 0 && y < nSize)
-                return true;
-            else
-                return false;
-        }
-
-
-
-
-        private static void ShowTerra(int nTerraID)
-        {
-            Console.WriteLine("Terra: {0}", nTerraID);
-            for (int r = 0; r < nSize; r++)
-            {
-                for (int c = 0; c < nSize; c++)
-                    Console.Write(AllTerras[nTerraID].nSlice[r, c]);
-                Console.WriteLine();
-            }
-            Console.WriteLine();
-        }
-
-
 
     }
 }

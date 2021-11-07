@@ -11,3 +11,17 @@ C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle17\obj\Debug\netcoreapp3.1\Puzzle17.cspro
 C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle17\obj\Debug\netcoreapp3.1\Puzzle17.dll
 C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle17\obj\Debug\netcoreapp3.1\Puzzle17.pdb
 C:\GIT\GF1977\.NET Core\AoC 2020\Puzzle17\obj\Debug\netcoreapp3.1\Puzzle17.genruntimeconfig.cache
+C:\Users\iopya\Source\Repos\AOC2020\Puzzle17\bin\Debug\netcoreapp3.1\Puzzle17.exe
+C:\Users\iopya\Source\Repos\AOC2020\Puzzle17\bin\Debug\netcoreapp3.1\Puzzle17.deps.json
+C:\Users\iopya\Source\Repos\AOC2020\Puzzle17\bin\Debug\netcoreapp3.1\Puzzle17.runtimeconfig.json
+C:\Users\iopya\Source\Repos\AOC2020\Puzzle17\bin\Debug\netcoreapp3.1\Puzzle17.runtimeconfig.dev.json
+C:\Users\iopya\Source\Repos\AOC2020\Puzzle17\bin\Debug\netcoreapp3.1\Puzzle17.dll
+C:\Users\iopya\Source\Repos\AOC2020\Puzzle17\bin\Debug\netcoreapp3.1\Puzzle17.pdb
+C:\Users\iopya\Source\Repos\AOC2020\Puzzle17\obj\Debug\netcoreapp3.1\Puzzle17.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iopya\Source\Repos\AOC2020\Puzzle17\obj\Debug\netcoreapp3.1\Puzzle17.AssemblyInfoInputs.cache
+C:\Users\iopya\Source\Repos\AOC2020\Puzzle17\obj\Debug\netcoreapp3.1\Puzzle17.AssemblyInfo.cs
+C:\Users\iopya\Source\Repos\AOC2020\Puzzle17\obj\Debug\netcoreapp3.1\Puzzle17.csproj.CoreCompileInputs.cache
+C:\Users\iopya\Source\Repos\AOC2020\Puzzle17\obj\Debug\netcoreapp3.1\Puzzle17.dll
+C:\Users\iopya\Source\Repos\AOC2020\Puzzle17\obj\Debug\netcoreapp3.1\Puzzle17.pdb
+C:\Users\iopya\Source\Repos\AOC2020\Puzzle17\obj\Debug\netcoreapp3.1\Puzzle17.genruntimeconfig.cache
+C:\Users\iopya\Source\Repos\AOC2020\Puzzle17\obj\Debug\netcoreapp3.1\Puzzle17.csproj.AssemblyReference.cache
