@@ -11,3 +11,11 @@ C-Sharp.sln.DotSettings.user
 bin/
 obj/
 TestResults/
+
+# binary files
+*.dll
+*.pdb
+
+# other
+*.sqlite
+*.suo
