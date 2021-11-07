@@ -41,7 +41,8 @@ namespace Puzzle18
 
             if (leftP < 0)
             {
-                res = calculate(test);
+                //res = calculate(test);
+                res = calculateAdvance(test);
                 return res;
             }
 
@@ -52,7 +53,8 @@ namespace Puzzle18
             if (subTest == "")
                 subTest = test;
             
-            res = calculate(subTest);
+            //res = calculate(subTest);
+            res = calculateAdvance(subTest);
             string toReplace = test.Substring(leftP, rightP - leftP + 1);
             string minimizedTest = test.Replace(toReplace, res.ToString());
 
@@ -81,6 +83,33 @@ namespace Puzzle18
                     previousOperator = element;
 
             }
+            return res;
+        }
+
+        static Int64 calculateAdvance(string subtest)
+        {
+            Int64 res;
+            string[] elements = subtest.Split(" ");
+            string previousOperator = "*";
+
+            for (int i = 0; i < elements.Length - 1; i++)
+            {
+                if (elements[i] == "+")
+                {
+                    res = Int64.Parse(elements[i - 1]) + Int64.Parse(elements[i + 1]);
+                    elements[i - 1] = "1";
+                    elements[i] = "*";
+                    elements[i + 1] = res.ToString();
+                }
+            }
+
+            res = 1;
+            foreach(string element in elements)
+            {
+                if (element != "*")
+                    res *= Int64.Parse(element);
+            }
+
             return res;
         }
     }
