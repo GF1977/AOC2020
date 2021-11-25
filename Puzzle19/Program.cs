@@ -14,7 +14,7 @@ namespace Puzzle19
             string line = file.ReadLine();
             List<string> Examples = new List<string>();
             
-
+            // Parsing the rules
             while (line != "")
             {
                 string[] tmp = line.Split(": ");
@@ -23,28 +23,25 @@ namespace Puzzle19
                 line = file.ReadLine();
             }
 
+            // Parsing examples
             while (line != null)
             {
-                if(line!="")
+                if (line != "")
                     Examples.Add(line);
-                
                 line = file.ReadLine();
             }
-
 
             string simpleRule;
             Rules.TryGetValue(0, out simpleRule);
             simpleRule = " " + simpleRule + " ";
 
-            string temp = "";
-            while (temp != simpleRule)
-            {
-                temp = simpleRule;
-                simpleRule = simplifyRules(simpleRule);
-            }
+            bool bRuleIsComplex = true;
+            while (bRuleIsComplex)
+                bRuleIsComplex = simplifyRules(simpleRule, out simpleRule);
+
 
             simpleRule = "^" + simpleRule.Replace(" ", "") + "$";
-            Console.WriteLine(simpleRule);
+            //Console.WriteLine(simpleRule);
 
             Regex rg = new Regex(simpleRule);
             int matchedCount=0;
@@ -53,7 +50,7 @@ namespace Puzzle19
             {
                 if (rg.IsMatch(Example))
                 {
-                    Console.WriteLine(Example);
+                    // Console.WriteLine(Example);
                     matchedCount++;
                 }
             }
@@ -62,10 +59,9 @@ namespace Puzzle19
 
         }
         
-        //a((aa|bb)(ab|ba)|(ab|ba)(aa|bb))b
-        static string simplifyRules(string simpleRule)
+        static bool simplifyRules(string simpleRule, out string result)
         {
-            string tempRule;
+            string tempRule = null;
 
             string[] firstRule = simpleRule.Split(" ");
 
@@ -82,12 +78,16 @@ namespace Puzzle19
                     else
                         tempRule = " " + tempRule + " ";
 
-                    string rule = " " + r + " ";
-                    simpleRule = simpleRule.Replace(rule, tempRule);
+                    //string rule = " " + r + " ";
+                    simpleRule = simpleRule.Replace(" " + r + " ", tempRule);
                 }
             }
 
-            return simpleRule;
+            result = simpleRule;
+            if (tempRule == null)
+                return false;
+            else
+                return true;
         }
     }
 }
