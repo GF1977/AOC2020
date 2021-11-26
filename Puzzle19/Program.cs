@@ -8,10 +8,9 @@ namespace Puzzle19
     class Program
     {
         // data_1.txt 239 & 405
-        static StreamReader file = new StreamReader(@"C:\Users\iopya\Source\Repos\AOC2020\Puzzle19\data_1.txt");
+        static StreamReader file = new StreamReader(@"C:\Users\iopya\Source\Repos\AOC2020\Puzzle19\data.txt");
         static List<string> Examples = new List<string>();
         static Dictionary<int, string> Rules = new Dictionary<int, string>();
-        static int[] matchedCase;
         static void Main(string[] args)
         {
             string line = file.ReadLine();
@@ -28,57 +27,34 @@ namespace Puzzle19
             // Parsing examples
             while (line != null)
             {
-                if (line != "")
-                    Examples.Add(line);
+                Examples.Add(line);
                 line = file.ReadLine();
             }
             
-            matchedCase = new int[Examples.Count];
-            for (int i = 0; i < Examples.Count; i++)
-                matchedCase[i] = 0;
-
             SolveThePuzzle(1);
-
-            for (int i = 0; i < Examples.Count; i++)
-                matchedCase[i] = 0;
-
             SolveThePuzzle(2);
 
         }
         static void SolveThePuzzle(int part=1)
         {
-            if (part == 1)
+            if (part == 2)
             {
-                Console.WriteLine("Part One");
-                int res = GetCasesForPartOne();
-                Console.WriteLine(res);
-                Console.WriteLine("");
-
-            }
-            else if (part == 2)
-            {
-                Console.WriteLine("Part Two");
+                // adding 5 levels of loops into 8th and 11th rules
                 Rules.Remove(8);
-                //Rules.Add(8, "42 | 42 8");
-                Rules.Add(8, "42 | 42 *");
+                Rules.Add(8, "42 | 42 ( 42 | 42 ( 42 | 42 ( 42 | 42 ( 42 | 42 42 ) ) ) )");
 
                 Rules.Remove(11);
-                //Rules.Add(11, "42 31 | 42 11 31");
-                Rules.Add(11, "42 31 | 42 * 31");
-
-                for (int i = 0; i < 5; i++)
-                {
-                    int x = GetCasesForPartTwo();
-                    Console.WriteLine(x);
-                }
-
+                Rules.Add(11, "42 31 | 42 ( 42 31 | 42 ( 42 31 | 42 ( 42 31 | 42 ( 42 31 | 42 ( 42 31 | 42 42 31 31 ) 31 ) 31 ) 31 ) 31 ) 31");
             }
-            else
-                return;
 
+            Console.WriteLine("Part {0}", part);
+            int res = GetCases();
+            Console.WriteLine(res);
+            Console.WriteLine("");
         }
 
-        static int GetCasesForPartOne()
+        // Return the number of the cases which match with the rule
+        static int GetCases()
         {
             string simpleRule;
             Rules.TryGetValue(0, out simpleRule);
@@ -88,94 +64,41 @@ namespace Puzzle19
             while (bRuleIsComplex)
                 bRuleIsComplex = SimplifyRules(simpleRule, out simpleRule);
 
-            int matchedCount = GetMatchedCases(simpleRule);
-
-            return matchedCount;
-        }
-
-        static int GetCasesForPartTwo()
-        {
-            int res = 0;
-
-            string simpleRule;
-            Rules.TryGetValue(0, out simpleRule);
-            simpleRule = " " + simpleRule + " ";
-
-            bool bRuleIsComplex = true;
-            while (bRuleIsComplex)
-                bRuleIsComplex = SimplifyRules(simpleRule, out simpleRule);
-
-            string rule8;
-            Rules.TryGetValue(8, out rule8);
-            rule8 = rule8.Replace("*", rule8);
-            Rules.Remove(8);
-            Rules.Add(8, rule8);
-
-            string rule11;
-            Rules.TryGetValue(11, out rule11);
-            rule11 = rule11.Replace("*", rule11);
-            Rules.Remove(11);
-            Rules.Add(11, rule11);
-
-            GetMatchedCases(simpleRule);
-
-            for (int i = 0; i < Examples.Count; i++)
-            {
-                if (matchedCase[i] > 0)
-                    res++;
-            }
-
-            return res;
-        }
-
-        static int GetMatchedCases(string simpleRule)
-        {
-            simpleRule = "^" + simpleRule.Replace(" ", "") + "$";
-            //Console.WriteLine(simpleRule);
-
-            Regex rg = new Regex(simpleRule);
             int matchedCount = 0;
-            int caseN = 0;
+            simpleRule = "^" + simpleRule.Replace(" ", "") + "$";
+            Regex rg = new Regex(simpleRule);
 
             foreach (string Example in Examples)
             {
                 if (rg.IsMatch(Example))
-                {
-                    //Console.WriteLine(Example);
                     matchedCount++;
-                    matchedCase[caseN]++;
-                }
-                caseN++;
             }
-
             return matchedCount;
         }
 
+        //convert the list of rules into the single line of Regular Expression
         static bool SimplifyRules(string simpleRule, out string result)
         {
             string tempRule = null;
-
             string[] firstRule = simpleRule.Split(" ");
 
             foreach (string r in firstRule)
             {
-                if(r!="a" && r!="b" && r!="(" && r!= ")" && r!="|" && r!= "" && r != "*")
+                int ruleNumber;
+                if(int.TryParse(r, out ruleNumber))
                 {
-                    Rules.TryGetValue(int.Parse(r), out tempRule);
-                    if (tempRule == null)
-                        break;
+                    Rules.TryGetValue(ruleNumber, out tempRule);
+                    tempRule = " " + tempRule + " ";
                     
                     if (tempRule != "a" && tempRule != "b")
-                        tempRule = " ( " + tempRule + " ) ";
-                    else
-                        tempRule = " " + tempRule + " ";
+                        tempRule = " (" + tempRule + ") ";
 
-                    //string rule = " " + r + " ";
                     simpleRule = simpleRule.Replace(" " + r + " ", tempRule);
                 }
             }
-
             result = simpleRule;
+
+            // tempRule == null when all the rules are converted to "a" or "b" and there is nothing to do
             if (tempRule == null)
                 return false;
             else
