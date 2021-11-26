@@ -8,7 +8,7 @@ namespace Puzzle19
     class Program
     {
         // data_1.txt 239 & 405
-        static StreamReader file = new StreamReader(@"C:\Users\iopya\Source\Repos\AOC2020\Puzzle19\data.txt");
+        static StreamReader file = new StreamReader(@"..\..\..\data.txt");
         static List<string> Examples = new List<string>();
         static Dictionary<int, string> Rules = new Dictionary<int, string>();
         static void Main(string[] args)
