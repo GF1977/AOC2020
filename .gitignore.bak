@@ -1,0 +1,14 @@
+# Visual Studio cache/options directory
+**/.vs/**
+
+# Rider cache/options directory
+.idea/**
+
+# Rider user config file
+C-Sharp.sln.DotSettings.user
+
+# Build results
+
+**/obj
+**/bin
+
