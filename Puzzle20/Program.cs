@@ -8,11 +8,13 @@ namespace Puzzle20
     public struct EdgesHash {public string N; public string E; public string S; public string W; }
     class Tile
     {
-        private int id;
+        public int id;
+        public Dictionary<int, int> connections;
         private char[,] Photo = new char[10, 10];
         public List<EdgesHash> edgesHashes = new List<EdgesHash>();
         public Tile(string RawData)
         {
+            connections = new Dictionary<int, int>();
             string[] parts = RawData.Split("\r\n");
             string[] sId = parts[0].Split(" ");
             this.id = int.Parse(sId[1].Replace(":",""));
@@ -46,6 +48,29 @@ namespace Puzzle20
 
                 foreach (EdgesHash EHrotated in HashRotated)
                     edgesHashesTMP.Add(EHrotated);
+
+
+                HashRotated = new EdgesHash[4];
+
+                HashRotated[0] = RotateRightOnce(FlipX(EH));
+                HashRotated[1] = RotateRightOnce(HashRotated[0]);
+                HashRotated[2] = RotateRightOnce(HashRotated[1]);
+                HashRotated[3] = RotateRightOnce(HashRotated[2]);
+
+                foreach (EdgesHash EHrotated in HashRotated)
+                    edgesHashesTMP.Add(EHrotated);
+
+
+                HashRotated = new EdgesHash[4];
+
+                HashRotated[0] = RotateRightOnce(FlipY(EH));
+                HashRotated[1] = RotateRightOnce(HashRotated[0]);
+                HashRotated[2] = RotateRightOnce(HashRotated[1]);
+                HashRotated[3] = RotateRightOnce(HashRotated[2]);
+
+                foreach (EdgesHash EHrotated in HashRotated)
+                    edgesHashesTMP.Add(EHrotated);
+
             }
 
             edgesHashes.AddRange(edgesHashesTMP);
@@ -55,7 +80,7 @@ namespace Puzzle20
         { 
             char[] HashChars = Hash.ToCharArray();
             Array.Reverse(HashChars);
-            return HashChars.ToString();
+            return  new string(HashChars);
         }
 
         public EdgesHash FlipX(EdgesHash EH)
@@ -112,11 +137,72 @@ namespace Puzzle20
 
 
             // parsing
-            ParsingInputData(@"..\..\..\data_t.txt");
+            ParsingInputData(@"..\..\..\data_p.txt");
 
-            Console.WriteLine("Part one: {0, 10:0}", 0);
+            CheckingEdges();
+
+            long res = 1;
+            foreach (Tile tile in Tiles)
+                if (tile.connections.Count == 2)
+                    res *= tile.id;
+
+                Console.WriteLine("Part one: {0, 10:0}", res);
 
 
+        }
+
+        private static void CheckingEdges()
+        {
+            Dictionary<string, int> Edges = new Dictionary<string, int>();
+
+            foreach (Tile tile in Tiles)
+            {
+                int n = 0;
+                foreach (EdgesHash EH in tile.edgesHashes)
+                {
+                    bool b = Edges.TryAdd(EH.N, tile.id);
+                    if (!b && tile.id != Edges[EH.N])
+                    {
+                        tile.connections.TryAdd(Edges[EH.N], 0);
+                        Tile T = Tiles.Find(t => t.id == Edges[EH.N]);
+                        T.connections.TryAdd(tile.id, 0);
+                    }
+                        //Console.WriteLine("Tile: {0}  &   Tile: {1}", tile.id, Edges[EH.N]);
+
+                    b = Edges.TryAdd(EH.E, tile.id);
+                    if (!b && tile.id != Edges[EH.E])
+                    {
+                        tile.connections.TryAdd(Edges[EH.E], 0);
+                        Tile T = Tiles.Find(t => t.id == Edges[EH.E]);
+                        T.connections.TryAdd(tile.id, 0);
+                    }
+                    //tile.connections.TryAdd(Edges[EH.E].Substring(0, 4), "");
+                    //Console.WriteLine("Tile: {0}  &   Tile: {1}", tile.id, Edges[EH.E]);
+
+                    b = Edges.TryAdd(EH.S, tile.id);
+                    if (!b && tile.id != Edges[EH.S])
+                    {
+                        tile.connections.TryAdd(Edges[EH.S], 0);
+                        Tile T = Tiles.Find(t => t.id == Edges[EH.S]);
+                        T.connections.TryAdd(tile.id, 0);
+                    }
+                    //    tile.connections.TryAdd(Edges[EH.S].Substring(0, 4), "");
+                    //Console.WriteLine("Tile: {0}  &   Tile: {1}", tile.id, Edges[EH.S]);
+
+
+                    b = Edges.TryAdd(EH.W, tile.id);
+                    if (!b && tile.id != Edges[EH.W])
+                    {
+                        tile.connections.TryAdd(Edges[EH.W], 0);
+                        Tile T = Tiles.Find(t => t.id == Edges[EH.W]);
+                        T.connections.TryAdd(tile.id, 0);
+                    }
+                    //    tile.connections.TryAdd(Edges[EH.W].Substring(0, 4), "");
+                    //Console.WriteLine("Tile: {0}  &   Tile: {1}", tile.id, Edges[EH.W]);
+
+                    n++;
+                }
+            }
         }
 
         private static void ParsingInputData(string filePath)
